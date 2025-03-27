@@ -51,13 +51,15 @@ require('lazy').setup({
 
   require 'custom/plugins/wakatime',
 
-  require 'custom/plugins/transparent',
+  -- require 'custom/plugins/transparent',
 
   require 'custom/plugins/discord_rich_presence',
 
   require 'custom/plugins/snippets',
 
-  require 'custom/plugins/peek',
+  -- require 'custom/plugins/peek',
+
+  require 'custom/plugins/markdown_preview',
 
   require 'custom/plugins/vim_visual_multi',
 
