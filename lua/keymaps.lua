@@ -56,4 +56,8 @@ vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle nvim t
 
 vim.keymap.set('n', '<leader>m', vim.cmd.MarkdownPreview, { desc = 'Open Markdown Preview' })
 
+vim.keymap.set('n', '<M-j>', '<C-d>zz', { desc = 'Jump page down' })
+
+vim.keymap.set('n', '<M-k>', '<C-u>zz', { desc = 'Jump page down' })
+
 -- vim: ts=2 sts=2 sw=2 et
