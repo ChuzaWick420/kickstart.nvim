@@ -51,4 +51,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- custom keymaps
+vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle nvim tree' })
+
+vim.keymap.set('n', '<leader>m', vim.cmd.MarkdownPreview, { desc = 'Open Markdown Preview' })
+
 -- vim: ts=2 sts=2 sw=2 et
