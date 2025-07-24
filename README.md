@@ -20,6 +20,8 @@ nvim
 ```
 
 ## My Personalized changes
-> [!warning] I recently updated to version `0.11.3` and some things have been deprecated. 
+> [!WARNING]
+> I recently updated to version `0.11.3` and some things have been deprecated. 
 
-> [!error] [`lua/lsp/clangd_extension.lua`](https://github.com/ChuzaWick420/kickstart.nvim/blob/master/lua/lsp/clangd_extension.lua) contains include headers paths on _my_ machine which won't be the case for you.
+> [!WARNING]
+> [`lua/lsp/clangd_extension.lua`](https://github.com/ChuzaWick420/kickstart.nvim/blob/master/lua/lsp/clangd_extension.lua) contains include headers paths on _my_ machine which won't be the case for you.
