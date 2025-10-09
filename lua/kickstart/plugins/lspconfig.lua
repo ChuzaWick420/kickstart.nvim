@@ -181,6 +181,7 @@ return {
         cssls = {},
         html = {},
         ltex = {},
+        typst_lsp = {},
         --
 
         lua_ls = {
