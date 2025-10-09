@@ -181,7 +181,7 @@ return {
         cssls = {},
         html = {},
         ltex = {},
-        typst_lsp = {},
+        -- typst_lsp = {},
         --
 
         lua_ls = {
@@ -198,6 +198,15 @@ return {
             },
           },
         },
+      }
+
+      -- setup LSP for Typst
+      local lspconfig = require 'lspconfig'
+
+      lspconfig.typst_lsp.setup {
+        cmd = { 'typst-lsp' },
+        filetypes = { 'typst' },
+        root_dir = lspconfig.util.root_pattern('.git', '.'),
       }
 
       -- Ensure the servers and tools above are installed
