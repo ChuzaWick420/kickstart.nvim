@@ -54,7 +54,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- custom keymaps
 vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle nvim tree' })
 
-vim.keymap.set('n', '<leader>m', vim.cmd.MarkdownPreview, { desc = 'Open Markdown Preview' })
+vim.keymap.set('n', '<leader>tm', vim.cmd.MarkdownPreview, { desc = '[M]arkdown Preview' })
+
+vim.keymap.set('n', '<leader>tp', function()
+  require('typst-preview').preview()
+end, {
+  desc = '[P]review Typst (Okular)',
+})
 
 vim.keymap.set('n', '<M-j>', '<C-d>zz', { desc = 'Page down' })
 vim.keymap.set('n', '<M-k>', '<C-u>zz', { desc = 'Page up' })

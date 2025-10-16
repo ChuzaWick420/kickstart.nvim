@@ -21,10 +21,5 @@ return {
 
       clean_temp_pdf = true,
     }
-
-    -- Optional keymap
-    vim.keymap.set('n', '<leader>tp', function()
-      require('typst-preview').preview()
-    end, { desc = 'Typst Preview (Okular)' })
   end,
 }
