@@ -5,6 +5,7 @@ return {
   init = function()
     -- VimTeX configuration goes here, e.g.
     vim.g.vimtex_compiler_method = 'latexmk'
-    vim.g.vimtex_view_method = 'general'
+    -- vim.g.vimtex_view_method = 'sumatrapdf'
+    vim.g.vimtex_view_general_viewer = 'D:\\CLI_Tools\\SumatraPDF\\SumatraPDF.exe'
   end,
 }
