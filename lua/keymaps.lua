@@ -22,6 +22,15 @@ vim.keymap.set('n', '<S-t>', function()
   vim.cmd.startinsert()
 end, { desc = 'Enter terminal mode' })
 
+-- Splitting
+-- horizontal
+vim.keymap.set('n', '<C-s>j', '<C-w>s', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<C-s>k', '<C-w>s', { desc = 'Split horizontally' })
+
+-- vertical
+vim.keymap.set('n', '<C-s>h', '<C-w>v', { desc = 'Split verticallly' })
+vim.keymap.set('n', '<C-s>l', '<C-w>v', { desc = 'Split verticallly' })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
