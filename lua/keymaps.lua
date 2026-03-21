@@ -6,7 +6,28 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>td', function()
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.loclist == 1 then
+      vim.cmd 'lclose'
+      return
+    end
+  end
+  vim.diagnostic.setloclist()
+end, { desc = '[T]oggle [D]iagnostics List' })
+
+vim.keymap.set('n', '<leader>tq', function()
+  -- check if quickfix window is open
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd 'cclose'
+      return
+    end
+  end
+
+  -- otherwise open it
+  vim.cmd 'TodoQuickFix'
+end, { desc = '[T]oggle Todo [Q]uickFix' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -24,12 +45,10 @@ end, { desc = 'Enter terminal mode' })
 
 -- Splitting
 -- horizontal
-vim.keymap.set('n', '<C-s>j', '<C-w>s', { desc = 'Split horizontally' })
-vim.keymap.set('n', '<C-s>k', '<C-w>s', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<leader>sj', '<C-w>s', { desc = 'Split horizontally' })
 
 -- vertical
-vim.keymap.set('n', '<C-s>h', '<C-w>v', { desc = 'Split verticallly' })
-vim.keymap.set('n', '<C-s>l', '<C-w>v', { desc = 'Split verticallly' })
+vim.keymap.set('n', '<leader>sl', '<C-w>v', { desc = 'Split verticallly' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -61,14 +80,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- custom keymaps
-vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle, { desc = 'Toggle nvim tree' })
+vim.keymap.set('n', '<leader>te', vim.cmd.NvimTreeToggle, { desc = '[T]oggle [E]xplorer' })
 
-vim.keymap.set('n', '<leader>tm', vim.cmd.MarkdownPreview, { desc = '[M]arkdown Preview' })
+vim.keymap.set('n', '<leader>tm', vim.cmd.MarkdownPreview, { desc = '[T]oggle [M]arkdown Preview' })
 
 vim.keymap.set('n', '<leader>tp', function()
   require('typst-preview').preview()
 end, {
-  desc = '[P]review Typst (Okular)',
+  desc = '[T]oggle [P]review Typst (Okular)',
 })
 
 vim.keymap.set('n', '<M-j>', '<C-d>zz', { desc = 'Page down' })
