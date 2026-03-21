@@ -45,10 +45,10 @@ end, { desc = 'Enter terminal mode' })
 
 -- Splitting
 -- horizontal
-vim.keymap.set('n', '<leader>sj', '<C-w>s', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<leader>j', '<C-w>s', { desc = 'Split horizontally' })
 
 -- vertical
-vim.keymap.set('n', '<leader>sl', '<C-w>v', { desc = 'Split verticallly' })
+vim.keymap.set('n', '<leader>l', '<C-w>v', { desc = 'Split verticallly' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
