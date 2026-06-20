@@ -24,4 +24,11 @@ nvim
 > I recently updated to version `0.11.3` and some things have been deprecated. 
 
 > [!WARNING]
-> [`lua/lsp/clangd_extension.lua`](https://github.com/ChuzaWick420/kickstart.nvim/blob/master/lua/lsp/clangd_extension.lua) contains include headers paths on _my_ machine which won't be the case for you.
+> [`lua/lsp/clangd_extension.lua`](https://github.com/ChuzaWick420/kickstart.nvim/blob/master/lua/lsp/clangd_extension.lua) assumes a system environment variable `INCLUDE_DIRECTORIES` containing paths for include headers.
+> e.g. 
+> ```
+> INCLUDE_DIRECTORIES = "
+>   P:\CLI_Tools\MSYS2\ucrt64\include;
+>   P:\CLI_Tools\MSYS2\ucrt64\include\c++\15.2.0;
+> "
+> ```
